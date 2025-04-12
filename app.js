@@ -14,3 +14,11 @@ lienmenu.forEach(lien => {
     })
     
 });
+
+// Display current date in footer
+document.addEventListener('DOMContentLoaded', function() {
+    const currentDate = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = currentDate.toLocaleDateString('en-US', options);
+    document.getElementById('current-date').textContent = ` | ${formattedDate}`;
+});
