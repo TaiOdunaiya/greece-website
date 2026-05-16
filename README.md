@@ -1,93 +1,74 @@
 # Greece Tourism Website
 
-A modern, responsive website showcasing the beauty and attractions of Greece. This website provides information about popular destinations, activities, and tour packages in Greece.
+A responsive, single-page website showcasing destinations, tour packages, and contact information for Greece. Built with plain HTML, CSS, and JavaScript—no frameworks or build step required.
 
 ## Features
 
-- Responsive navigation menu with mobile-friendly design
-- Interactive sections showcasing popular Greek destinations
-- Tour package pricing with different tiers
-- Contact form for inquiries
-- Dynamic date display in footer
-- Beautiful imagery of Greek landmarks and beaches
+- Fixed navigation with smooth scroll to page sections
+- Mobile-friendly menu (toggle via flag icon on smaller screens)
+- Hero section with call-to-action
+- Destination highlights with image grid layout (Elafonissi Beach, Athens, Village of Lindos)
+- Three-tier pricing comparison (Classic, Discovery, Exception)
+- Contact form (first name, last name, message)
+- Dynamic copyright year in the footer
 
-## Technologies Used
+## Technologies
 
 - HTML5
-- CSS3
+- CSS3 (Grid, Flexbox, media queries)
 - JavaScript (ES6+)
-- Responsive Design
-- Modern CSS Grid and Flexbox layouts
 
-## Sections
+## Page sections
 
-1. **Home**
-   - Hero section with main title
-   - Call-to-action button
+| Section | ID | Description |
+|---------|-----|-------------|
+| Home | `#home` | Hero banner, title, and “Learn More” link |
+| What to do? | `#to-do` | Three destination cards with images |
+| Prices | `#price` | Classic ($100), Discovery ($250), Exception ($500) |
+| Contact | `#contact` | Inquiry form |
 
-2. **What to Do?**
-   - Featured destinations:
-     - Elafonissi Beach
-     - Athens
-     - Village of Lindos
-   - Interactive image grid layout
+## Getting started
 
-3. **Prices**
-   - Three tour packages:
-     - Classic ($100)
-     - Discovery ($250)
-     - Exception ($500)
-   - Feature comparison
-   - Booking options
+1. Clone the repository and open the project folder:
 
-4. **Contact**
-   - Contact form
-   - Name and message fields
-   - Submit functionality
-
-## Setup and Installation
-
-1. Clone the repository:
    ```bash
-   git clone [repository-url]
-   ```
-
-2. Navigate to the project directory:
-   ```bash
+   git clone <repository-url>
    cd Greece-Website
    ```
 
-3. Open `index.html` in your web browser to view the website.
+2. Open `index.html` in a web browser.
 
-## Project Structure
+   For local development with live reload, you can use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in VS Code (port `5502` is configured in `.vscode/settings.json`).
+
+## Project structure
 
 ```
 Greece-Website/
-├── index.html
-├── style.css
-├── app.js
+├── index.html          # Main page markup
+├── style.css           # Layout and responsive styles
+├── app.js              # Mobile nav toggle and footer year
 ├── images/
 │   ├── greece-flag-round-circle-icon.svg
 │   ├── logo.png
+│   ├── home.png
 │   ├── Elafonissi-Beach.png
 │   ├── Athens.png
 │   └── Village-of-Lindos.png
+├── .vscode/
+│   └── settings.json   # Live Server port (optional)
 └── README.md
 ```
 
-## Contributing
+## Notes
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+- The contact form is front-end only; submitting does not send data to a server. Hook it up to a backend or form service if you need real submissions.
+- “Learn More” and “Book a guide” buttons link to in-page sections or placeholders—they can be wired to external URLs as needed.
 
 ## Author
 
-- Tai Odunaiya
+Tai Odunaiya
 
 ## Acknowledgments
 
-- Images used in this project are for demonstration purposes
-- Inspired by the beauty and culture of Greece
+- Images are for demonstration purposes.
+- Inspired by the beauty and culture of Greece.

@@ -1,45 +1,56 @@
-*,::after,::before{
+:root {
+    --page-bg: #fde4ead1;
+    --page-bg-muted: #fde4ead1;
+}
+
+html {
+    background-color: var(--page-bg);
+}
+
+*,
+::after,
+::before {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-body{
-    /* font-family: 'Abril Fatface', sans-serif; */
-    list-style-type: none;
+body {
+    background-color: var(--page-bg);
+    min-height: 100vh;
     text-decoration: none;
 }
-a{
-    list-style-type: none;
+
+a {
     text-decoration: none;
     color: blue;
 }
 
-li{
+li {
     list-style-type: none;
 }
 
 /*NAVIGATION*/
 
-nav{
+nav {
     position: fixed;
     height: 70px;
     width: 100%;
-    background: linear-gradient(to bottom,#333,#626262);
+    background: linear-gradient(to bottom, #333, #626262);
     z-index: 10;
 }
 
-.logomenu{
+.logomenu {
     position: absolute;
-    top:10px;
+    top: 10px;
     right: 15px;
-    width:50px ;
+    width: 50px;
     z-index: 25;
     display: none;
 }
 
-.listenav{
-    background: linear-gradient(to bottom,#333,#626262);
+.listenav {
+    background: linear-gradient(to bottom, #333, #626262);
     height: 100%;
     width: 100%;
     display: flex;
@@ -48,52 +59,53 @@ nav{
     z-index: 20;
 }
 
-.item-nav{
+.item-nav {
     display: flex;
     align-items: center;
 }
 
-.item-nav a{
+.item-nav a {
     font-size: 25px;
     color: #f1f1f1;
     text-decoration: none;
     margin: 0 20px;
 }
 
-.item-nav a::after{
+.item-nav a::after {
     content: "";
     display: block;
     margin: 0 auto;
     width: 0%;
     height: 2px;
     background: #f1f1f1;
-    transition: width 0.3s ease-in-out ;
+    transition: width 0.3s ease-in-out;
 }
 
 
-.item-nav a:hover::after{
+.item-nav a:hover::after {
     width: 100%;
 }
 
 
-@media screen and (max-width:700px){
-    .logomenu{
+@media screen and (max-width:700px) {
+    .logomenu {
         display: block;
     }
 
-    
-    .listenav{
+
+    .listenav {
         padding-top: 70px;
         flex-direction: column;
         height: auto;
         position: relative;
         display: none;
     }
-    .listenav.active{
+
+    .listenav.active {
         display: block;
     }
 
-    .item-nav{
+    .item-nav {
         height: 70px;
         justify-content: center;
     }
@@ -101,28 +113,27 @@ nav{
 
 /* home*/
 
-.home{
+.home {
     padding-top: 1px;
     width: 100%;
     height: 100vh;
     min-height: 970px;
     background-image: url(images/home.png);
     font-family: 'Abril Fatface', sans-serif;
-    /* filter: brightness(80%); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-bottom: 1px dotted #626262;
 }
 
-.logo-dakar{
+.logo-home {
     border-radius: 50%;
     width: 180px;
     display: block;
     margin: 179px auto 0;
 }
 
-.home h1{
+.home h1 {
     text-align: center;
     font-size: 50px;
     color: #f1f1f1;
@@ -130,17 +141,16 @@ nav{
 
 }
 
-.sous-titre{
+.sous-titre {
     text-align: center;
     font-size: 35px;
     font-weight: bold;
     color: blue;
-    /* text-shadow: 0 0 10px #333; */
     margin: 5px 0;
 
 }
 
-.btn-home{
+.btn-home {
     border-radius: 9999px;
     background: blue;
     border: 1 solid #333;
@@ -155,28 +165,32 @@ nav{
     transition: all 0.3s ease-in-out;
 }
 
-.btn-home:hover{
-    background: #f1f1f1;
+.btn-home:hover {
+    background: var(--page-bg-muted);
     color: blue;
 }
 
-@media screen and (max-width:850px){
-    .home{
+@media screen and (max-width:850px) {
+    .home {
         height: 650px;
         min-height: auto;
     }
-    .logo-dakar{
+
+    .logo-home {
         margin: 50px auto 0;
         width: 90px;
     }
-    .home h1{
+
+    .home h1 {
         font-size: 60px;
     }
-    .sous-titre{
+
+    .sous-titre {
         font-size: 23px;
 
     }
-    .btn-home{
+
+    .btn-home {
         width: 150px;
         height: 50px;
         line-height: 50px;
@@ -185,21 +199,25 @@ nav{
     }
 }
 
-@media screen and (max-width:400px){
-    .home{
+@media screen and (max-width:400px) {
+    .home {
         height: 650px;
     }
-    .logo-dakar{
+
+    .logo-home {
         margin: 110px auto 0;
         width: 150px;
     }
-    .home h1{
+
+    .home h1 {
         font-size: 30px;
     }
-    .sous-titre{
+
+    .sous-titre {
         font-size: 20px;
     }
-    .btn-home{
+
+    .btn-home {
         width: 130px;
         height: 45px;
         line-height: 45px;
@@ -207,25 +225,25 @@ nav{
         margin: 15px auto 0;
     }
 
-    .logomenu{
+    .logomenu {
         top: 15px;
         width: 40px;
     }
 }
-    
+
 
 /* ----------------------SECTION 1---------------------- */
 
 
-.section-1{
+.section-1 {
     display: grid;
-    
-    grid-template:200px repeat(3,auto)/ 1fr 600px 1fr;
-    background: #f1f1f1;
+
+    grid-template: 200px repeat(3, auto)/ 1fr 600px 1fr;
+    background: var(--page-bg);
 }
 
-.section-1 h2{
-    
+.section-1 h2 {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -237,30 +255,33 @@ nav{
 
 /*  PLACEMENT  */
 
-.bloc-1,.img-grid-1{
-   
-    grid-area: 2 / 2 / 3 / 3 ;
+.bloc-1,
+.img-grid-1 {
+
+    grid-area: 2 / 2 / 3 / 3;
 }
 
-.bloc-right,.img-grid-2{
-    
-    grid-area: 3 / 2 / 4 /3  ;
+.bloc-right,
+.img-grid-2 {
+
+    grid-area: 3 / 2 / 4 /3;
 }
 
-.bloc-3,.img-grid-3{
-    grid-area: 4 / 2 / 5 / 3 ;
+.bloc-3,
+.img-grid-3 {
+    grid-area: 4 / 2 / 5 / 3;
 }
 
-.bloc{
+.bloc {
     background: #333;
     color: #f1f1f1;
-    position:relative;
+    position: relative;
     border-radius: 2px;
     height: 750px;
     margin-bottom: 250px;
 }
 
-.img-grid{
+.img-grid {
     width: 500px;
     height: 700px;
     object-fit: cover;
@@ -268,36 +289,37 @@ nav{
 }
 
 
-.img-grid-1,.img-grid-3{
+.img-grid-1,
+.img-grid-3 {
     top: 130px;
     left: 20px;
 }
 
-.bloc-left{
+.bloc-left {
     left: -300px;
 }
 
 
 
-.bloc-txt-left{
+.bloc-txt-left {
     width: 50%;
     height: 100%;
 }
 
-.bloc-txt-left h3{
-    
+.bloc-txt-left h3 {
+
     white-space: nowrap;
     font-size: 35px;
     margin: 30px 15px;
 }
 
-.bloc-txt-left p{
+.bloc-txt-left p {
     font-size: 20px;
     line-height: 40px;
     padding: 15px;
 }
 
-.bloc button{
+.bloc button {
     border-radius: 9999px;
     outline: none;
     border: none;
@@ -311,197 +333,200 @@ nav{
     display: block;
 }
 
-.bloc-right{
+.bloc-right {
     right: -300px;
 }
 
-.img-grid-2{
+.img-grid-2 {
     top: 130px;
     left: 100px;
 }
 
-.bloc-txt-right{
+.bloc-txt-right {
     position: absolute;
     right: 0;
     width: 50%;
     height: 100%;
 }
 
-.bloc-txt-right h3{
+.bloc-txt-right h3 {
     position: relative;
     font-size: 30px;
     margin: 30px 15px;
 }
 
-.bloc-txt-right p{
-    font-size: 20px; 
+.bloc-txt-right p {
+    font-size: 20px;
     line-height: 40px;
     padding: 15px;
 }
 
-.bloc-txt-right button{
+.bloc-txt-right button {
     margin: 5px auto;
 }
 
 
-.ligne-gauche{
-    grid-area:1/2/-1/3;
-    border-left:1px solid #333;
+.ligne-gauche {
+    grid-area: 1/2/-1/3;
+    border-left: 1px solid #333;
 }
 
-.ligne-droite{
-    grid-area:1/3/-1/4;
-    border-left:1px solid #333;
+.ligne-droite {
+    grid-area: 1/3/-1/4;
+    border-left: 1px solid #333;
 }
 
 
 
-@media screen and (max-width:1200px){
+@media screen and (max-width:1200px) {
 
-    .section-1{
-        grid-template: 200px repeat(6,auto) 100px / 1fr 600px 1fr;
+    .section-1 {
+        grid-template: 200px repeat(6, auto) 100px / 1fr 600px 1fr;
     }
 
-    .section-1 h2{
+    .section-1 h2 {
         font-size: 50px;
         padding-bottom: 0px;
     }
 
-    .bloc-1{
-        grid-area: 2 / 2 / 3 / 3 ;
+    .bloc-1 {
+        grid-area: 2 / 2 / 3 / 3;
     }
 
-    .img-grid-1{
+    .img-grid-1 {
         grid-area: 3 / 2 / 4 / 3;
     }
 
-    .bloc-right{
-        grid-area: 4 / 2 / 5 /3  ;
+    .bloc-right {
+        grid-area: 4 / 2 / 5 /3;
     }
 
-    .img-grid-2{
-        grid-area: 5 / 2 / 6 / 3 ;
-    }
-    .img-grid-3{
-        grid-area: 7 / 2 / 8 / 3 ;
-    }
-    .bloc-3{
-        grid-area: 6 / 2 / 7 / 3 ;
+    .img-grid-2 {
+        grid-area: 5 / 2 / 6 / 3;
     }
 
-    .bloc{
+    .img-grid-3 {
+        grid-area: 7 / 2 / 8 / 3;
+    }
+
+    .bloc-3 {
+        grid-area: 6 / 2 / 7 / 3;
+    }
+
+    .bloc {
         height: 500px;
         margin-bottom: 0;
     }
 
-    .img-grid{
+    .img-grid {
         position: static;
         width: 600px;
         height: 750px;
     }
 
-    .img-grid-1,.img-grid-3{
-        top: 0px;
-        left: 0px;
-    }
-    .img-grid-2{
+    .img-grid-1,
+    .img-grid-3 {
         top: 0px;
         left: 0px;
     }
 
-    .bloc-left{
+    .img-grid-2 {
+        top: 0px;
         left: 0px;
     }
-    .bloc-right{
+
+    .bloc-left {
+        left: 0px;
+    }
+
+    .bloc-right {
         right: 0px;
     }
-    .bloc-txt-left{
+
+    .bloc-txt-left {
         width: 100%;
         height: 100%;
     }
-    .bloc-txt-left h3{
+
+    .bloc-txt-left h3 {
         font-size: 30px;
         text-align: center;
     }
-    .bloc-txt-right h3{
+
+    .bloc-txt-right h3 {
         font-size: 25px;
         text-align: center;
     }
 
-    .bloc-txt-left p, .bloc-txt-left p{
+    .bloc-txt-left p,
+    .bloc-txt-right p {
         font-size: 20px;
         line-height: 1.8;
         padding: 15px;
     }
 
-    .bloc-button{
-        font-size: 20px;
-        padding: 15px 30px;
-        margin-bottom: 30px;
-    }
-
-    .bloc-txt-right{
+    .bloc-txt-right {
         position: static;
         width: 100%;
         height: 100%;
     }
 }
-   
-@media screen and  (max-width:600px){
-    .section-1{
-        grid-template: 150px repeat(6,auto) 100px / 100%;
+
+@media screen and (max-width:600px) {
+    .section-1 {
+        grid-template: 150px repeat(6, auto) 100px / 100%;
     }
-    .ligne-gauche,.ligne-droite{
+
+    .ligne-gauche,
+    .ligne-droite {
         display: none;
     }
 
-    .section-1 h2{
+    .section-1 h2 {
         font-size: 30px;
     }
 
-    .bloc,.img-grid{
+    .bloc,
+    .img-grid {
         grid-area: auto;
     }
 
-    .img-grid{
+    .img-grid {
         width: 100%;
         height: 500px;
     }
 
-    .bloc-txt-right{
+    .bloc-txt-right {
         width: 100%;
         height: 100%;
     }
 }
 
-@media screen and  (max-width:420px){
-     .bloc-txt-right,.bloc-txt-left p{
+@media screen and (max-width:420px) {
+
+    .bloc-txt-right,
+    .bloc-txt-left p {
         width: 100%;
         height: 300px;
         font-size: 15px;
-        /* line-height: 1.8; */
         margin-top: 20px;
     }
-    .section-1 h2{
+
+    .section-1 h2 {
         font-size: 25px;
     }
 
-    .bloc-txt-right button{
+    .bloc-txt-right button {
         font-size: 15px;
-        /* padding: 10px 20px; */
         margin-bottom: 40px;
     }
-
-    /* .bloc-right{
-        height: auto;
-    } */
 }
 
 /* section-2 */
 
-.section-2{
+.section-2 {
     width: 100%;
-    height:200px;
+    height: 200px;
     background: url(images/home.png);
     background-position: center;
     background-attachment: fixed;
@@ -510,101 +535,104 @@ nav{
     flex-direction: column;
 }
 
-.section-2 span{
+.section-2 span {
     text-align: center;
     font-size: 80px;
-    color:#333;
+    color: #333;
 }
 
-@media screen and (max-width: 400px){
-    .section-2{
+@media screen and (max-width: 400px) {
+    .section-2 {
         height: 200px;
     }
-    .section-2 span{
+
+    .section-2 span {
         font-size: 50px;
     }
-    
+
 }
 
 /* section 3 */
 
-.section-3{
-   padding-bottom:150px ;
-   border-bottom: 1px dashed #333;
+.section-3 {
+    padding-bottom: 150px;
+    border-bottom: 1px dashed #333;
 }
 
-.section-3 h2{
+.section-3 h2 {
     text-align: center;
     font-size: 45px;
     margin: 120px 0 20px;
-    padding-bottom: 0 30px;
+    padding-bottom: 30px;
 }
 
-.section-3 hr{
-   width: 200px;
-   margin: 20px auto 100px;
+.section-3 hr {
+    width: 200px;
+    margin: 20px auto 100px;
 }
 
-.container-price{
+.container-price {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.price-cards{
+.price-cards {
     width: 350px;
     height: auto;
+    background: #fff;
     border-radius: 5px;
     margin: 15px 15px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0,0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.2s ease-in-out;
-    position: relative;  
+    position: relative;
 }
 
-.price-cards:hover{
-    transform:translateY(-10px) ;
+.price-cards:hover {
+    transform: translateY(-10px);
 }
 
-.price-cards h4{
+.price-cards h4 {
     text-align: center;
-    font-size: 25px ;
+    font-size: 25px;
     padding: 20px 0;
-    clip-path: polygon(0% 50%,100 0%,100% 70%,0% 100%);
-    background: #afdfff; 
+    clip-path: polygon(0% 50%, 100 0%, 100% 70%, 0% 100%);
+    background: #afdfff;
 }
 
-.price-cards span{
+.price-cards span {
     font-size: 25px;
     font-weight: bold;
     text-align: center;
     display: block;
     margin: 20px 0;
-    padding: 15px;  
+    padding: 15px;
 }
 
-.price-cards:nth-child(2) h4{
+.price-cards:nth-child(2) h4 {
     background: #508aff;
 }
-.price-cards:nth-child(3) h4{
+
+.price-cards:nth-child(3) h4 {
     background: #0000ff;
 }
 
-.price-cards p{
+.price-cards p {
     font-size: 20px;
     padding: 20px 10px;
     border-top: 1px solid rgb(194, 197, 194);
 }
 
-.price-cards p:last-of-type{
+.price-cards p:last-of-type {
     border-bottom: 1px solid rgb(194, 197, 194);
 }
 
-.price-cards p:nth-child(odd){
-    background: rgba(195, 195,195, 0.219);
+.price-cards p:nth-child(odd) {
+    background: rgba(195, 195, 195, 0.219);
 }
 
-.price-cards a{
+.price-cards a {
     display: block;
     text-decoration: none;
     border: 1Px solid #333;
@@ -619,25 +647,26 @@ nav{
     font-size: 20px;
 }
 
-.price-cards a:hover{
+.price-cards a:hover {
     background: #333;
     color: #f1f1f1ff;
 }
 
-@media screen and (max-width: 900px){
-    .section-3 h3{
+@media screen and (max-width: 900px) {
+    .section-3 h2 {
         font-size: 30px;
         padding: 0 10px;
     }
 }
 
-@media screen and (max-width: 425px){
-    .section-3 h3{
+@media screen and (max-width: 425px) {
+    .section-3 h2 {
         font-size: 25px;
         padding: 0 10px;
         margin: 50px 0;
     }
-    .section-3 hr{
+
+    .section-3 hr {
         width: 200px;
         margin: 20px auto 20px;
     }
@@ -652,6 +681,7 @@ nav{
     border-bottom: 1px dashed #333;
     width: 100%;
 }
+
 .section-4 h2 {
     text-align: center;
     color: #333;
@@ -661,7 +691,7 @@ nav{
     padding: 70px 0 0 0;
 }
 
-.form-bloc{
+.form-bloc {
     width: 100%;
     padding: 55px;
 }
@@ -670,15 +700,18 @@ nav{
     margin: 0 auto;
     width: 70%;
 }
+
 .form-groupe {
     position: relative;
     margin-bottom: 45px;
     padding: 10px;
 }
+
 .form-groupe label {
     color: #aaa;
     font-size: 20px;
 }
+
 .form-groupe input {
     display: block;
     width: 90%;
@@ -701,7 +734,7 @@ textarea {
     resize: none;
     outline: none;
     font-size: 20px;
-    background: #f1f1f1;
+    background: var(--page-bg-muted);
 }
 
 .form-groupe:nth-child(4) {
@@ -712,9 +745,9 @@ textarea {
     display: block;
     width: auto;
     padding: 15px 60px;
-    border: 3px solid rgb(144,144,144);
+    border: 3px solid rgb(144, 144, 144);
     border-radius: 9999px;
-    background-image: linear-gradient(to right, transparent 50%, rgb(65,65,65) 50%, rgb(134,134,134));
+    background-image: linear-gradient(to right, transparent 50%, rgb(65, 65, 65) 50%, rgb(134, 134, 134));
     background-size: 200%;
     color: #333;
     font-size: 24px;
@@ -722,6 +755,7 @@ textarea {
     cursor: pointer;
     transition: all 0.4s ease-in-out;
 }
+
 .form-groupe .button-sub:hover {
     color: #fff;
     background-position: 100%;
@@ -732,6 +766,7 @@ textarea {
     .section-4 h2 {
         padding: 70px 0 0 0;
     }
+
     .container-form {
         padding-left: 0;
     }
@@ -746,11 +781,3 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
-
-
-
-    
-
-
-
-
