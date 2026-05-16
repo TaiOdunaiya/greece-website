@@ -48,6 +48,7 @@ Greece-Website/
 ├── style.css           # Layout and responsive styles
 ├── app.js              # Mobile nav toggle and footer year
 ├── images/
+│   ├── greece.png              # Favicon (browser tab icon)
 │   ├── greece-flag-round-circle-icon.svg
 │   ├── logo.png
 │   ├── home.png
